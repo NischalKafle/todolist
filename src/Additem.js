@@ -13,7 +13,8 @@ function Additem() {
     <div className="inner">
     <div className="input-container"></div>
     <input type="Text" class="form-control" id="exampleFormControlInput1" placeholder="Add Item" />
-    <i className="fa fa-plus add-btn"></i>
+    <button class="btn " type="button">+</button>
+
     </div>
   </div>
  
