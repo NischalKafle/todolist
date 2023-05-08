@@ -1,12 +1,18 @@
-export const incNumber = (num) => {
+export const addTodo = () => {
     return {
-        type: 'INCREMENT',
-        payload: num
+        type: 'ADD_TODO',
+      
     }
 }
 
-export const decNumber = () => {
+export const deleteTodo = () => {
     return {
-        type: 'DECREMENT'
+        type: 'DELETE_TODO'
+    }
+};
+
+export const removeTodo = () => {
+    return {
+        type: 'REMOVE_TODO'
     }
 };

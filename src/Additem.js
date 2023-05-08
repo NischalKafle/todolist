@@ -1,13 +1,13 @@
-import React from 'react';
+import React,{useState} from 'react';
 
-import {incNumber} from "./actions";
-import {decNumber} from "./actions";
+import {addTodo} from "./actions";
+import {deleteTodo} from "./actions";
 
 import { useSelector, useDispatch } from "react-redux";
 
 
 function Additem() {
-  const changeTheNumber = useSelector(state => state.changeTheNumber);
+ const[inputData,setinputData]=useState('');
   
   const dispatch = useDispatch();
 
@@ -18,9 +18,9 @@ function Additem() {
     <label for="exampleFormControlInput1" className="form-label" style={{display: 'inline-block'}}>Add Your Items Here</label>
     
 <div className="relative">
-<a className="quantity__minus" title="Decrement" onClick={() => dispatch(decNumber())}><span>-</span></a>
-<input id="my-value" type="text" value={changeTheNumber}/>
-<a className="quantity__plus" title="Increment" onClick={() => dispatch(incNumber(5))}><span>+</span></a>
+
+<input id="my-value" type="text" value={inputData} onChange={(event)=>setinputData(event.target.value)}/>
+
 <button id="absolute" type="button" className="btn">+</button>
 </div>
 
