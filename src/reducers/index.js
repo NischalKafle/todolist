@@ -1,12 +1,28 @@
-import changeTheNumber from "./updown";
+import { combineReducers } from 'redux';
+import todoReducers from './todoReducers';
 
-import { combineReducers } from "redux";
+const rootReducer = combineReducers({
+  todos: todoReducers,
+});
 
-const reducers = combineReducers(
-    {
-    //   myNumber:changeTheNumber
-        changeTheNumber
+export const addTodo=(data)=>{
+    return{
+        type:"ADD_TODO",
+        payload:{
+            id:new Date().getTime().toString(),
+            data:data
+        }
     }
-);
+}
+export const deleteTodo=()=>{
+    return{
+        type:"DELETE_TODO"
+    }
+}
+export const removeTodo=()=>{
+    return{
+        type:"REMOVE_TODO"
+    }
+}
 
-export default reducers;
+export default rootReducer;
