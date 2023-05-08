@@ -1,21 +1,29 @@
-import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import React,{useState} from 'react';
+
+import {addTodo} from "./actions";
+import {deleteTodo} from "./actions";
+
+import { useSelector, useDispatch } from "react-redux";
 
 
 function Additem() {
+ const[inputData,setinputData]=useState('');
+  
+  const dispatch = useDispatch();
+
   return (
  <div class="mb-3" id="main">
  <img className="todoImg" src="./img/pic2.jpg"/>
  
-    <label for="exampleFormControlInput1" class="form-label" style={{display: 'inline-block'}}>Add Your Items Here</label>
-   
-    <div className="inner">
-    <div className="input-container"></div>
-    <input type="Text" class="form-control" id="exampleFormControlInput1" placeholder="Add Item" />
-    <button class="btn " type="button">+</button>
+    <label for="exampleFormControlInput1" className="form-label" style={{display: 'inline-block'}}>Add Your Items Here</label>
+    
+<div className="relative">
 
-    </div>
+<input id="my-value" type="text" value={inputData} onChange={(event)=>setinputData(event.target.value)}/>
+
+<button id="absolute" type="button" className="btn">+</button>
+</div>
+
   </div>
  
   )
