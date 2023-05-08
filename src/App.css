@@ -36,3 +36,46 @@
     transform: rotate(360deg);
   }
 }
+#main{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+flex-direction: column;
+text-align: center;
+margin-top: 175px;
+}
+
+.todoImg{
+  width:125px;
+  height:125px;
+}
+.inner{
+  display: flex;
+}
+div.relative {
+
+width: 400px;
+height: 200px;
+display: flex;
+
+}
+#my-value{
+width:270px;
+height:35px;
+border: 3px black solid;
+border-radius: 0px;
+}
+.form-label{
+margin-top: 4px;
+}
+
+#absolute {
+height: 35px;
+border: 3px black solid;
+width: 50px;
+}
+.btn{
+border-radius: 0;
+padding: 2px;
+font-weight: bold;
+}
