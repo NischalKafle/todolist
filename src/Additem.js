@@ -1,9 +1,26 @@
-import React from 'react';
+import React,{useState} from 'react';
+import TodoItem from './TodoItem';
 
-
-function Additem() {
+const Additem =()=>{
  
-
+const [list,setList]=useState("");
+const[item,setItem]=useState([]);
+const addItem=(e)=>{
+setList(e.target.value);
+}
+const newItem=()=>{
+  setItem((itemAdd)=>{
+  return [...itemAdd,list]; 
+})
+setList("");
+}
+const deleteList=(id)=>{
+  setItem((oldvalues)=>{
+    return oldvalues.filter((arrEle,index)=>{
+     return index!=id;
+    });
+  });
+}
   return (
     
  <div className="mb-3 " id="main" >
@@ -13,10 +30,22 @@ function Additem() {
     
 <div className="relative" id="marg">
 
-<input id="my-value" type="text" />
+<input id="my-value" type="text" onChange={addItem} value={list} />
 
-<button id="absolute" type="button" className="btn" >+</button>
-
+<button id="absolute" type="button" className="btn" onClick={newItem}>+</button>
+<div id="ol">
+<br/>
+<br/>
+<ol >
+{
+  item.map((value,index)=>{
+    return (
+      <TodoItem key={index} id={index} listAdd={value} deleteItems={deleteList}/>
+    )
+  })
+}
+</ol>
+</div>
 </div>
 
    
