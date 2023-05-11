@@ -1,31 +1,27 @@
-import React,{useState} from 'react';
-
-import {addTodo} from "./actions";
-import {deleteTodo} from "./actions";
-import { removeTodo } from './actions';
-import { useSelector, useDispatch } from "react-redux";
+import React from 'react';
 
 
 function Additem() {
- const[inputData,setinputData]=useState('');
-  
-  const dispatch = useDispatch();
+ 
 
   return (
- <div class="mb-3" id="main">
+    
+ <div className="mb-3 " id="main" >
  <img className="todoImg" src="./img/pic2.jpg"/>
  
     <label for="exampleFormControlInput1" className="form-label" style={{display: 'inline-block'}}>Add Your Items Here</label>
     
-<div className="relative">
+<div className="relative" id="marg">
 
-<input id="my-value" type="text" value={inputData} onChange={(event)=>setinputData(event.target.value)}/>
+<input id="my-value" type="text" />
 
-<button id="absolute" type="button" className="btn" onClick={()=>dispatch(addTodo(inputData))}>+</button>
+<button id="absolute" type="button" className="btn" >+</button>
+
 </div>
 
+   
   </div>
- 
+
   )
 }
 
