@@ -28,6 +28,10 @@ width: 600px;
 height: 650px;
 
 }
+#marg{
+  margin-top:2px;
+ }
+
 #my-value{
 width:500px;
 height:35px;
